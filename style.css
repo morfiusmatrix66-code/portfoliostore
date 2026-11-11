@@ -37,6 +37,12 @@ body {
     color: var(--text-main); 
     text-decoration: none; 
     letter-spacing: -0.5px;
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Эффект при наведении — точно как в первом сайте */
+.logo:hover { 
+    color: var(--primary); 
 }
 
 .logo span { color: var(--primary); } /* Если захочешь выделить часть лого */
