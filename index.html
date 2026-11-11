@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCreator | Магазин гаджетов</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__content">
+            <a href="#" class="logo">DCreator</a>
+            
+            <!-- Добавляем навигацию -->
+            <nav class="nav">
+                <a href="#catalog" onclick="scrollToCatalog()">Каталог</a>
+                <a href="#about" onclick="scrollToSection('about')">О нас</a>
+            </nav>
+
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Лучшие гаджеты 2026 года</h1>
+            <p>Скидки до 30% на новую коллекцию</p>
+        </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="catalog container" id="catalog">
+        <div class="filters">
+            <!-- Кнопки фильтров остаются теми же -->
+            <button class="filter-btn active" onclick="filterProducts('all', this)">Все</button>
+            <button class="filter-btn" onclick="filterProducts('phones', this)">Телефоны</button>
+            <button class="filter-btn" onclick="filterProducts('laptops', this)">Ноутбуки</button>
+            <button class="filter-btn" onclick="filterProducts('audio', this)">Аудио</button>
+        </div>
+
+        <div class="products-grid" id="products-container">
+            <!-- Товары генерируются через JS -->
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>Почему выбирают DCreator?</h2>
+                <p>Мы — команда энтузиастов, которая отбирает только лучшие гаджеты на рынке. Наша цель — сделать технологии доступными и понятными для каждого.</p>
+                <ul class="about-list">
+                    <li>✅ Только оригинальная продукция</li>
+                    <li>✅ Гарантия от 1 года на все товары</li>
+                    <li>✅ Быстрая доставка по всей стране</li>
+                    <li>✅ Профессиональная техподдержка 24/7</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://i.ibb.co/9HGWSfKs/2026-11-11-142552843.jpg" alt="DCreator">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="total-price">0</span> ₽</div>
+            <button class="btn btn-primary" onclick="alert('Переход к оформлению...')">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
